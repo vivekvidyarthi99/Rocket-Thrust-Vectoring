@@ -70,7 +70,10 @@ void setup() {
   xaxis_servo.attach(9);
   yaxis_servo.attach(10);
   //Entering in alignment/acceleration data  
-  roll = 15;
+  //Debugging input
+  //roll = 90;
+  roll = 0;
+  pitch = 0;
   gimbal(-90,-90);
   gimbal(90,90);
   gimbal(0,0);
@@ -78,19 +81,21 @@ void setup() {
 }
 
 void loop() {
-  delay(1500);
+  delay(100);
   Serial.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-  Serial.println("Current Roll:");
+  Serial.println("Current Roll/Pitch:");
   Serial.println(roll);
-  Serial.println("Correction:");
+  Serial.println(pitch);
+  Serial.println("Correction Roll/Pitch:");
   Serial.println(roll_correction);
+  Serial.println(pitch_correction);  
   Serial.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
   roll_correction = pid_correction(0, roll, 1);
   pitch_correction = pid_correction(0, pitch, 1);
   gimbal(roll_correction, pitch_correction);
   
-  
-  roll = roll + roll_correction;
+  // Debugging Code:
+  //roll = roll + roll_correction;
   
 
 }
