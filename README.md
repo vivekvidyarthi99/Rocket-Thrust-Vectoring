@@ -1,4 +1,4 @@
-## Welcome to Hades
+## Welcome to My GitHub
 
 Hades is an extremely small scale rocket that is built to perform reflect the development of large scale rockets and other space flight endeavors. In order to follow this philosophy, we are using the most efficient/low-powered parts as possible. Our flight computer consists of an Arduino Micro, which uses the ATmega32u4 processor, which handles pyro events, stabilization through thrust vectoring, and landing procedures.
 
